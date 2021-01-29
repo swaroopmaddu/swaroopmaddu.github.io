@@ -1,0 +1,26 @@
+.nav-wrapper, .page-footer {
+    background-color:rgb(231, 76, 60) !important;
+    font-size: 14px;
+  }
+
+  .container {
+    width:85%;
+    margin-top: 15px;
+  }
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      
+  .brand-logo {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+  .page-footer {
+    padding-top: 0px;
+}
