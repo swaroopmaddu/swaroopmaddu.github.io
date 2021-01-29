@@ -1,0 +1,128 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Examiner</title>
+      <meta charset="utf-8" />
+      <link rel="icon" href="./images/favicon.ico" type="image/ico" sizes="16x16"> 
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="./css/style.css" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <nav>
+        <div class="nav-wrapper">
+
+          <a href="#" class="brand-logo center">
+            Examiner
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="https://github.com/swaroopmaddu/">Download</a></li>
+            <li><a href="https://github.com/swaroopmaddu/">Developer</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <main>
+        <div class="container">
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card ">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="images/exam.png">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Examiner<i class="material-icons right">file_download</i></span>
+                    <p>Examiner is an online Examination System developed for educational institutes to conduct MCQ's test for their students on regular basis.</p>
+                    <p><a href="#">Get Source code</a></p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Details<i class="material-icons right">close</i></span>
+                    <ol>
+                      <li>Download the jar <a href="source/Quiz.jar">here</a></li>
+                      <li>Run the Jar file.</li>
+                      <!-- Login creds -->
+                      <li>Username TZ0XXX (001-999)</li>
+                      <li>Password: Password</li>
+                      <li>Exam Password: <code>CyberPunk</code></li>
+                    </ol>
+                    <p class="red-text">Java JRE is required to run the application.</p>
+                    <p class=""> </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m6  ">
+                <div class="card white darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title red-text center">Evaluate</span>
+                    <form enctype="multipart/form-data">
+                      <div class="file-field input-field">
+                        <div class="btn red">
+                          <span>File</span>
+                          <input type="file" id="upload">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  
+                  <div class="card-action">
+                    <span class="blue-text">Please Upload the file created on your desktop to evaluate.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </main>
+
+      <footer class="page-footer">
+        <div class="footer-copyright">
+          <div class="container">
+          © 2021 Maddu Swaroop
+          <a class="grey-text text-lighten-4 right" href="https://github.com/swaroopmaddu/">Github</a>
+          </div>
+        </div>
+      </footer>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="./js/decrypt.js"></script>
+
+      <script>
+        function handleFileSelect(evt) {
+            var files = evt.target.files; // FileList object
+        
+            // use the 1st file from the list
+            f = files[0];
+        
+            var reader = new FileReader();
+        
+            // Closure to capture the file information.
+            reader.onload = (function(theFile) {
+                return function(e) {
+
+                    var text = e.target.result;
+
+                    var lines = text.split(/[\r\n]+/g);
+                    var options = decrypt(lines[3]);
+                    $('#result').append(options);
+                };
+              })(f);
+        
+              // Read in the image file as a data URL.
+              reader.readAsText(f);
+          }
+        
+          document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+        </script>
+    </body>
+  </html>
