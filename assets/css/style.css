@@ -13,7 +13,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
+  background: #040404 url("../img/bg.webp") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -1186,4 +1186,12 @@ section .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+
+.skill-box:hover{
+  border-radius: 5px;
+  aspect-ratio: 1/1;
+  transform: scale(1.2);
+  z-index: 10;
+  transition: ease-in-out 0.2s;
 }
