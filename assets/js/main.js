@@ -2,6 +2,22 @@
 (function() {
   "use strict";
 
+  // Loading animation
+  window.addEventListener('load', () => {
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.className = 'loading-overlay';
+    loadingOverlay.innerHTML = '<div class="loading-spinner"></div>';
+    document.body.appendChild(loadingOverlay);
+    
+    setTimeout(() => {
+      loadingOverlay.style.opacity = '0';
+      setTimeout(() => {
+        loadingOverlay.remove();
+        document.body.classList.add('fade-in');
+      }, 500);
+    }, 800);
+  });
+
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -40,9 +56,14 @@
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
+    const navbar = select('#navbar')
+    navbar.classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
+    
+    // Update ARIA attributes for accessibility
+    const isExpanded = navbar.classList.contains('navbar-mobile')
+    this.setAttribute('aria-expanded', isExpanded)
   })
 
   /**
