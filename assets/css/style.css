@@ -1307,3 +1307,128 @@ html {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
+
+/* Compact Project Items */
+.project-item {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 10px;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(24, 210, 110, 0.15);
+  border-color: rgba(24, 210, 110, 0.3);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.project-header i {
+  font-size: 28px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.project-header h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.project-tech {
+  color: #18d26e;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-links a:hover {
+  color: #18d26e;
+  transform: translateY(-2px);
+}
+
+.project-links a i {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .project-header i {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .project-tech {
+    text-align: center;
+  }
+  
+  .project-links {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* Work Category Title */
+.work-category-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #18d26e;
+  text-align: center;
+}
+
+.contribution-style {
+  border-left: 3px solid #18d26e;
+}
+
+@media (max-width: 768px) {
+  .work-category-title {
+    font-size: 20px;
+    text-align: center;
+  }
+}
