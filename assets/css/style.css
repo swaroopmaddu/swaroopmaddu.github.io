@@ -415,7 +415,7 @@ section .container {
 
 .section-title p {
   margin: 0;
-  margin: -15px 0 15px 0;
+  margin: -15px 0 5px 0;
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
@@ -647,8 +647,8 @@ section .container {
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   color: #fff;
 }
 
@@ -1738,6 +1738,32 @@ html {
   font-size: 11px;
   font-weight: 500;
   border: 1px solid rgba(24, 210, 110, 0.2);
+}
+
+.certification-link {
+  margin-top: 10px;
+}
+
+.credential-btn {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(24, 210, 110, 0.1);
+  color: #18d26e;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgba(24, 210, 110, 0.3);
+  transition: all 0.3s ease;
+}
+
+.credential-btn:hover {
+  background: rgba(24, 210, 110, 0.2);
+  color: #35e888;
+  border-color: rgba(24, 210, 110, 0.5);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
