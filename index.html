@@ -59,8 +59,7 @@
     <div class="container">
 
       <h1><a href="index.html">Swaroop Maddu</a></h1>
-      <h2>I'm a curious <span>developer</span> on a mission to code experiences that engage, delight, and leave a
-        lasting impression.</h2>
+      <h2>I'm a <span class="typing-text">Rust Developer</span> specializing in building secure & scalable blockchain solutions.</h2>
 
       <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
         <ul>
@@ -84,7 +83,7 @@
   </header><!-- End Header -->
 
   <!-- ======= About Section ======= -->
-  <section id="about" class="about">
+  <section id="about" class="about fade-in-section">
 
     <!-- ======= About Me ======= -->
     <div class="about-me container">
@@ -143,15 +142,21 @@
           <!-- Row1 -->
           <div class="col-lg-1"></div>
           <div class="col-lg-2">
-            <div class="skill-box">
+            <div class="skill-box" data-skill="95">
               <img width="48pc" height="48px" src="./assets/img/tech/rust.svg" alt="Rust" />
               <h6>Rust</h6>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="95"></div>
+              </div>
             </div>
           </div>
           <div class="col-lg-2">
-            <div class="skill-box">
+            <div class="skill-box" data-skill="85">
               <img width="48pc" height="48px" src="./assets/img/tech/c.svg" alt="C" />
               <h6>C</h6>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="85"></div>
+              </div>
             </div>
           </div>
           <div class="col-lg-2">
@@ -169,9 +174,12 @@
           </div>
 
           <div class="col-lg-2">
-            <div class="skill-box">
+            <div class="skill-box" data-skill="90">
               <img src="./assets/img/tech/python.svg" alt="Python" />
               <h6>Python</h6>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="90"></div>
+              </div>
             </div>
           </div>
 
@@ -217,9 +225,12 @@
           </div>
           <div class="col-lg-1"></div>
           <div class="col-lg-2">
-            <div class="skill-box">
+            <div class="skill-box" data-skill="80">
               <img src="./assets/img/tech/react.svg" alt="React" />
               <h6>React</h6>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="80"></div>
+              </div>
             </div>
           </div>
           <div class="col-lg-2">
@@ -344,7 +355,7 @@
   </section><!-- End About Section -->
 
   <!-- ======= Projects Section ======= -->
-  <section id="projects" class="portfolio">
+  <section id="projects" class="portfolio fade-in-section">
     <div class="container">
 
       <div class="section-title">
@@ -437,7 +448,7 @@
   </section><!-- End Projects Section -->
 
   <!-- ======= Resume Section ======= -->
-  <section id="resume" class="resume">
+  <section id="resume" class="resume fade-in-section">
     <div class="container">
 
       <div class="section-title">
@@ -446,71 +457,39 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-6">
-
+        <div class="col-lg-4">
           <h3 class="resume-title">Education</h3>
-
-          <div class="resume-item">
-            <h4>Bachelor of Computer Science and Engineering</h4>
-            <h5>2017 - 2021</h5>
-            <p><em>Rajiv Gandhi University of Knowledge Technologies, Nuzvid</em></p>
-            <ul>
-              <li>GPA: 8.6</li>
-            </ul>
-          </div>
-
-          <div class="resume-item">
-            <h4>Pre University Course</h4>
-            <h5>2015 - 2017</h5>
-            <p><em>Rajiv Gandhi University of Knowledge Technologies, Nuzvid</em></p>
-            <ul>
-              <li>CGPA: 7.62</li>
-            </ul>
-          </div>
-
-          <div class="resume-item">
-            <h4>Secondary School Certificate</h4>
-            <h5>2014 - 2015</h5>
-            <p><em>Zilla Parishad High School, Jangareddigudem</em></p>
-            <ul>
-              <li>GPA: 9.7</li>
-            </ul>
+          <div class="resume-item compact">
+            <h4>Bachelor of Computer Science</h4>
+            <h5>2017 - 2021 • GPA: 8.6</h5>
+            <p><em>RGUKT Nuzvid</em></p>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-8">
           <h3 class="resume-title">Professional Experience</h3>
 
-          <div class="resume-item">
-            <h4>Developer</h4>
-            <h5>December 2022 - Present</h5>
-            <p><em>OtterSec, Remote, US</em></p>
-            <p>
-              <li>Enhanced OtterSec's Solana Formal Verification framework by integrating new features, resulting in increased verification efficiency and enabling the Formal Verification of new Solana Programs.</li>
-              <li>Developed and maintained high-performance APIs on the Solana blockchain, including the Solana Verified Programs API (built in Rust), enhancing the visibility of verified on-chain programs on Solana explorers.</li>
-              <li>Spearheaded the development of a Proof of Concept (POC) Formal Verification framework for Soroban Smart Contracts on the Stellar Blockchain from scratch.</li>
-              <li><strong>Technologies:</strong> Rust, Solana/Anchor, Kani (Formal Verification), Docker</li>
-            </p>
+          <div class="resume-item compact">
+            <h4>Developer • <span class="company">OtterSec</span></h4>
+            <h5>Dec 2022 - Present • Remote, US</h5>
+            <p>Building formal verification tools for Solana & Stellar blockchains. Enhanced verification frameworks, developed high-performance APIs, and created POC verification systems.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Rust</span>
+              <span class="tech-tag">Solana</span>
+              <span class="tech-tag">Kani</span>
+              <span class="tech-tag">Docker</span>
+            </div>
           </div>
 
-          <div class="resume-item">
-            <h4>Research Engineer</h4>
-            <h5>June 2021 - November 2022</h5>
-            <p><em>StrawHat Labs, Bengaluru, India</em></p>
-            <p>
-              <li>Led research and development for Solana blockchain Projects, contributing to the successful launch of 2 new projects.</li>
-              <li>Built the open-source Phantom Connect package, enabling seamless integration between Flutter applications and Phantom Wallet.</li>
-              <li><strong>Technologies:</strong> Rust, Anchor, Javascript, React.js, Next.js, Dart, Flutter</li>
-            </p>
-          </div>
-
-          <div class="resume-item">
-            <h4>Application Developer</h4>
-            <h5>May 2019 - May 2020</h5>
-            <p><em>Moonshots, Pune</em></p>
-            <p>
-              <li>Worked as a Flutter Application Developer intern.</li>
-              <li>Developed a Proof of Concept (POC) for Secure Chat Application Using FIDO Authentication using Flutter.</li>
-            </p>
+          <div class="resume-item compact">
+            <h4>Research Engineer • <span class="company">StrawHat Labs</span></h4>
+            <h5>Jun 2021 - Nov 2022 • Bengaluru, India</h5>
+            <p>Led Solana blockchain R&D, launched 2 projects, built open-source Phantom Connect package for Flutter-Wallet integration.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Rust</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+            </div>
           </div>
 
         </div>
@@ -522,7 +501,7 @@
 
 
   <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact fade-in-section">
     <div class="container">
 
       <div class="section-title">

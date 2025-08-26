@@ -18,6 +18,43 @@
     }, 800);
   });
 
+  // Typing Animation
+  const typingTexts = ['Rust Developer'];
+  let currentIndex = 0;
+  let currentText = '';
+  let isDeleting = false;
+  
+  function typeText() {
+    const typingElement = document.querySelector('.typing-text');
+    if (!typingElement) return;
+    
+    const fullText = typingTexts[currentIndex];
+    
+    if (isDeleting) {
+      currentText = fullText.substring(0, currentText.length - 1);
+    } else {
+      currentText = fullText.substring(0, currentText.length + 1);
+    }
+    
+    typingElement.textContent = currentText;
+    
+    let typeSpeed = isDeleting ? 50 : 100;
+    
+    if (!isDeleting && currentText === fullText) {
+      typeSpeed = 2000; // Pause at end
+      isDeleting = true;
+    } else if (isDeleting && currentText === '') {
+      isDeleting = false;
+      currentIndex = (currentIndex + 1) % typingTexts.length;
+      typeSpeed = 500; // Pause before next word
+    }
+    
+    setTimeout(typeText, typeSpeed);
+  }
+  
+  // Start typing animation
+  setTimeout(typeText, 1000);
+
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -255,6 +292,90 @@
       type: 'bullets',
       clickable: true
     }
+  });
+
+  /**
+   * Intersection Observer for animations
+   */
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Fade in sections
+        if (entry.target.classList.contains('fade-in-section')) {
+          entry.target.classList.add('visible');
+        }
+        
+        // Animate skill boxes with stagger
+        if (entry.target.querySelector('.skill-box')) {
+          const skillBoxes = entry.target.querySelectorAll('.skill-box');
+          skillBoxes.forEach((box, index) => {
+            setTimeout(() => {
+              box.classList.add('animate');
+              
+              // Animate progress bars
+              const progressBar = box.querySelector('.skill-progress-bar');
+              const progress = box.querySelector('.skill-progress');
+              if (progressBar && progress) {
+                progress.classList.add('animate');
+                setTimeout(() => {
+                  const width = progressBar.getAttribute('data-width');
+                  progressBar.style.width = width + '%';
+                }, 200);
+              }
+            }, index * 100);
+          });
+        }
+        
+        // Animate project cards
+        if (entry.target.querySelector('.project-item')) {
+          const projectItems = entry.target.querySelectorAll('.project-item');
+          projectItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, index * 150);
+          });
+        }
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe sections and skill containers
+  window.addEventListener('load', () => {
+    const sectionsToObserve = document.querySelectorAll('.fade-in-section, .skills-boxes, .portfolio-container');
+    sectionsToObserve.forEach(section => {
+      observer.observe(section);
+    });
+    
+    // Initial state for project items
+    document.querySelectorAll('.project-item').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(30px)';
+      item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    });
+  });
+
+  /**
+   * Enhanced smooth scrolling
+   */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
 
 })()

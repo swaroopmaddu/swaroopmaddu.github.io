@@ -1432,3 +1432,328 @@ html {
     text-align: center;
   }
 }
+
+/* Interactive Animations */
+
+/* Typing Animation */
+.typing-text {
+  position: relative;
+  color: #18d26e;
+  border-bottom: 2px solid #18d26e;
+  padding-bottom: 6px;
+}
+
+.typing-text::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  bottom: 6px;
+  width: 2px;
+  height: 1.2em;
+  background-color: #18d26e;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Enhanced Skill Box Animations */
+.skill-box {
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-box:hover {
+  border-radius: 5px;
+  aspect-ratio: 1/1;
+  transform: scale(1.15) rotate(5deg);
+  z-index: 10;
+  box-shadow: 0 12px 30px rgba(24, 210, 110, 0.4);
+  background: rgba(24, 210, 110, 0.1);
+}
+
+.skill-box img {
+  transition: all 0.3s ease;
+}
+
+.skill-box:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Enhanced Project Card Animations */
+.project-item {
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(24, 210, 110, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.project-item:hover::before {
+  left: 100%;
+}
+
+.project-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(24, 210, 110, 0.2);
+  border-color: rgba(24, 210, 110, 0.5);
+}
+
+.project-item:hover .project-header i {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 10px rgba(24, 210, 110, 0.6));
+}
+
+.project-item:hover .project-links a {
+  transform: translateY(-3px);
+}
+
+/* Animated Progress Bars for Skills */
+.skill-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.skill-progress.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #18d26e, #35e888);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.skill-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Social Links Enhanced Animation */
+.social-links a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(24, 210, 110, 0.2);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.social-links a:hover::before {
+  width: 60px;
+  height: 60px;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: #18d26e;
+  box-shadow: 0 8px 25px rgba(24, 210, 110, 0.4);
+}
+
+/* Section Fade-in Animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Animation for Skills */
+.skill-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-box.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation Link Animations */
+.navbar a {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #18d26e, #35e888);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* Enhanced Button Animations */
+.project-links a,
+.contribution-links a {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-links a::before,
+.contribution-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(24, 210, 110, 0.1);
+  transition: left 0.3s ease;
+}
+
+.project-links a:hover::before,
+.contribution-links a:hover::before {
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .project-item:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  .skill-box:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* Compact Resume Styles */
+.resume-item.compact {
+  padding: 0 0 15px 15px;
+  margin-top: -2px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.resume-item.compact::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  left: -7px;
+  top: 0;
+  background: #18d26e;
+  border: 2px solid #18d26e;
+}
+
+.resume-item.compact h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #18d26e;
+}
+
+.resume-item.compact h5 {
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 10px;
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  border-radius: 12px;
+}
+
+.resume-item.compact p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.company {
+  color: #fff;
+  font-weight: 600;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.resume .tech-tag {
+  background: rgba(24, 210, 110, 0.15);
+  color: #18d26e;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid rgba(24, 210, 110, 0.2);
+}
+
+@media (max-width: 768px) {
+  .resume-item.compact h4 {
+    font-size: 15px;
+  }
+  
+  .resume-item.compact h5 {
+    font-size: 13px;
+  }
+  
+  .resume-item.compact p {
+    font-size: 12px;
+  }
+  
+  .tech-tags {
+    justify-content: center;
+  }
+}
